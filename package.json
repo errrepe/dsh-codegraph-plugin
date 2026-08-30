@@ -1,0 +1,57 @@
+{
+  "name": "dsh-codegraph",
+  "version": "0.1.0",
+  "description": "DSH profile bundle exposing the codegraph CLI as eight model-facing code-intelligence tools: symbol search, callers/callees, impact analysis, area exploration, symbol/file reading, index status and sync.",
+  "type": "module",
+  "license": "MIT",
+  "author": "errrepe",
+  "homepage": "https://github.com/errrepe/dsh-codegraph-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/errrepe/dsh-codegraph-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/errrepe/dsh-codegraph-plugin/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "codegraph",
+    "code-intelligence",
+    "static-analysis"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./quote": "./lib/quote.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/quote.js",
+    "test": "node test/quote.test.js"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "files": [
+    "lib",
+    "test",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
