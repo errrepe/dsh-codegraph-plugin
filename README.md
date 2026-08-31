@@ -65,3 +65,9 @@ Estrutura: `lib/index.js` (host half — registro dos tools, execução do CLI),
 ## Licença
 
 MIT — veja [LICENSE](./LICENSE).
+
+## FAQ
+
+**Does codegraph need to be installed?** Yes — the plugin shells out to the `codegraph` CLI on the host `PATH`. Install via `cargo install codegraph` or from https://github.com/colbymchenry/codegraph.
+
+**When to call `codegraph_sync`?** After editing files, so subsequent `query`/`explore` calls see the new code. `status` shows whether the index is stale.
